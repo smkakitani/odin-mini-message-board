@@ -13,17 +13,19 @@ const indexRouter = require("./routes/indexRouter");
 const newRouter = require("./routes/newRouter");
 
 
-// EJS views
+
+// EJS views, enables view engine /views
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Needed to parse data from form POST
+app.use(express.urlencoded({ extended: true }));
 
-// app.get("/", (req, res) => res.send("Hello, world!!!"));
+// Routes
 app.use("/", indexRouter);
-app.use("/messages", newRouter);
+app.use("/", newRouter);
 
-
-
+// 
 const PORT = 3000;
 
 app.listen(PORT, (error) => {
