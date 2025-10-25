@@ -1,10 +1,17 @@
 // Import dotenv
 require("dotenv").config();
 
+// Start server
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => res.send("Hello, world!!!"));
+// Import routers from ./routes
+const indexRouter = require("./routes/indexRouter");
+
+// app.get("/", (req, res) => res.send("Hello, world!!!"));
+app.use("/", indexRouter);
+
+
 
 const PORT = 3000;
 
