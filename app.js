@@ -1,3 +1,6 @@
+// Import dotenv
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 
@@ -12,3 +15,10 @@ app.listen(PORT, (error) => {
 
   console.log(`Mini message board app! Listening on port ${PORT}`);
 });
+
+
+
+// Using environment variables
+if (process.env.NODE_ENV === "prod") {
+    // do production-specific stuff
+};
