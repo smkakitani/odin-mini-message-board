@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Mini message board</title>
+  </head>
+  <body>
+    <ul>
+      <% messages.forEach((user) => { %>
+        <li>
+          <h2><%= user.user %></h2>
+          <p><%= user.text %></p>
+          <p><%= user.added %></p>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
